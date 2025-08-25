@@ -1,4 +1,3 @@
-package Pilha;
 
 public class ArrayStack implements Stackable {
   private Object[] data;
