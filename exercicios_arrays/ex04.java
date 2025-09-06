@@ -3,33 +3,30 @@ consoantes foram lidas. Imprima as consoantes. */
 
 package exercicios_arrays;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class ex04 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         char[] letras = new char[10];
-        int contadorConsoantes = 0;
-
-        System.out.println("Digite 10 caracteres (um por vez):");
+        System.out.println("Digite 10 caracteres:");
 
         for (int i = 0; i < letras.length; i++) {
-            letras[i] = sc.next().charAt(0); // lê o primeiro caractere digitado
+            letras[i] = sc.next().charAt(0);
         }
 
-        System.out.println("\nConsoantes digitadas:");
+        List<Character> vogais = Arrays.asList('a','e','i','o','u','A','E','I','O','U');
+        List<Character> consoantes = new ArrayList<>();
+
         for (char c : letras) {
-            // Verifica se é letra e não é vogal
-            if (Character.isLetter(c) &&
-                !(c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' ||
-                  c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U')) {
-                System.out.print(c + " ");
-                contadorConsoantes++;
+            if (Character.isLetter(c) && !vogais.contains(c)) {
+                consoantes.add(c);
             }
         }
 
-        System.out.println("\nQuantidade de consoantes: " + contadorConsoantes);
+        System.out.println("Consoantes: " + consoantes);
+        System.out.println("Quantidade: " + consoantes.size());
 
         sc.close();
     }
