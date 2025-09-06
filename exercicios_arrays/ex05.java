@@ -5,6 +5,7 @@ Imprima os três vetores. */
 package exercicios_arrays;
 
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class ex05 {
     public static void main(String[] args) {
@@ -13,28 +14,21 @@ public class ex05 {
         int[] numeros = new int[20];
         int[] pares = new int[20];
         int[] impares = new int[20];
-        int qtdPares = 0, qtdImpares = 0;
+        int contPar = 0, contImpar = 0;
 
         System.out.println("Digite 20 números inteiros:");
-
         for (int i = 0; i < numeros.length; i++) {
             numeros[i] = sc.nextInt();
-
             if (numeros[i] % 2 == 0) {
-                pares[qtdPares++] = numeros[i];
+                pares[contPar++] = numeros[i];
             } else {
-                impares[qtdImpares++] = numeros[i];
+                impares[contImpar++] = numeros[i];
             }
         }
 
-        System.out.print("\nVetor original: ");
-        for (int n : numeros) System.out.print(n + " ");
-
-        System.out.print("\nVetor PAR: ");
-        for (int i = 0; i < qtdPares; i++) System.out.print(pares[i] + " ");
-
-        System.out.print("\nVetor IMPAR: ");
-        for (int i = 0; i < qtdImpares; i++) System.out.print(impares[i] + " ");
+        System.out.println("Vetor original: " + Arrays.toString(numeros));
+        System.out.println("Vetor PAR: " + Arrays.toString(Arrays.copyOf(pares, contPar)));
+        System.out.println("Vetor IMPAR: " + Arrays.toString(Arrays.copyOf(impares, contImpar)));
 
         sc.close();
     }
