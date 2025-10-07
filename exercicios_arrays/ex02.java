@@ -1,7 +1,7 @@
 /* Faça um programa em Java que leia um vetor de 
 10 números reais e mostre-os na ordem inversa. */
 
-package ExerciciosArrays;
+package exercicios_arrays;
 
 import java.util.Scanner;
 
@@ -23,7 +23,6 @@ public class ex02 {
             invertido[i] = numeros[numeros.length - 1 - i];
         }
 
-        // exibição
         System.out.println("\nNúmeros na ordem inversa:");
         for (double n : invertido) {
             System.out.println(n);

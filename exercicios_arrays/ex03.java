@@ -1,6 +1,6 @@
 /*  Faça um programa em Java que leia 4 notas,
  mostre as notas e a média na tela */
-package ExerciciosArrays;
+package exercicios_arrays;
 
 import java.util.Scanner;
 
